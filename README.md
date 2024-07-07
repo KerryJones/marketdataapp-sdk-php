@@ -20,7 +20,7 @@ composer require kerryjones/marketdataapp-sdk-php
 
 ```php
 $client = new MarketDataApp\Client();
-$quote = $client->indicies->quote('AAPL');
+$quote = $client->indices->quote('AAPL');
 ```
 
 ## Testing
