@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kerryjones/marketdataapp-sdk-php.svg?style=flat-square)](https://packagist.org/packages/kerryjones/marketdataapp-sdk-php)
 [![Tests](https://img.shields.io/github/actions/workflow/status/kerryjones/marketdataapp-sdk-php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/kerryjones/marketdataapp-sdk-php/actions/workflows/run-tests.yml)
+[![Codecov](https://img.shields.io/codecov/c/github/kerryjones/main)](https://codecov.io/github/KerryJones/marketdataapp-sdk-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/kerryjones/marketdataapp-sdk-php.svg?style=flat-square)](https://packagist.org/packages/kerryjones/marketdataapp-sdk-php)
 
 This is an unofficial PHP SDK for Market Data. It provides developers with a powerful, easy-to-use interface to obtain
