@@ -1,11 +1,11 @@
 {
-    "name": "marketdataapp/marketdataapp-sdk-php",
+    "name": "kerryjones/marketdataapp-sdk-php",
     "description": "PHP SDK for MarketData.app",
     "keywords": [
         "MarketDataApp",
         "marketdataapp-sdk-php"
     ],
-    "homepage": "https://github.com/marketdataapp/marketdataapp-sdk-php",
+    "homepage": "https://github.com/kerryjones/marketdataapp-sdk-php",
     "license": "MIT",
     "authors": [
         {
