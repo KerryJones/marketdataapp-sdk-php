@@ -1,10 +1,12 @@
 <?php
+
 namespace MarketDataApp\Endpoints\Responses;
 
 use Carbon\Carbon;
 
 class IndicesQuote
 {
+
     // Will always be ok when there is data for the symbol requested.
     public string $status;
 
@@ -30,7 +32,8 @@ class IndicesQuote
     // The date/time of the quote.
     public Carbon $updated;
 
-    public function __construct(object $response) {
+    public function __construct(object $response)
+    {
         $this->status = $response->s;
         $this->symbol = $response->symbol[0];
         $this->last = $response->last[0];
