@@ -3,13 +3,13 @@
 namespace MarketDataApp\Tests;
 
 use Carbon\Carbon;
-use MarketDataApp\Client;
-use \GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\Response;
+use MarketDataApp\Client;
 use MarketDataApp\Endpoints\Responses\IndicesQuote;
 use PHPUnit\Framework\TestCase;
 
@@ -53,14 +53,15 @@ class IndicesTest extends TestCase
     public function testExceptionHandling_throwsGuzzleException()
     {
         $this->setMockResponses([
-            new RequestException("Error Communicating with Server", new Request('GET', 'test'))
+            new RequestException("Error Communicating with Server", new Request('GET', 'test')),
         ]);
 
         $this->expectException(\GuzzleHttp\Exception\GuzzleException::class);
         $response = $this->client->indices->quote("INVALID");
     }
 
-    private function setMockResponses(array $responses): void {
+    private function setMockResponses(array $responses): void
+    {
         $mock = new MockHandler($responses);
         $handlerStack = HandlerStack::create($mock);
         $this->client->setGuzzle(new GuzzleClient(['handler' => $handlerStack]));

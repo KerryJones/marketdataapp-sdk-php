@@ -7,14 +7,16 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
-abstract class ClientBase {
-    const API_URL = "https://api.marketdata.app/";
-    const API_HOST = "api.marketdata.app";
+abstract class ClientBase
+{
+    public const API_URL = "https://api.marketdata.app/";
+    public const API_HOST = "api.marketdata.app";
 
     protected GuzzleClient $guzzle;
     protected string $token;
 
-    public function __construct(string $token) {
+    public function __construct(string $token)
+    {
         $this->guzzle = new GuzzleClient(['base_uri' => self::API_URL]);
         $this->token = $token;
     }
@@ -40,10 +42,11 @@ abstract class ClientBase {
         }, $responses);
     }
 
-    protected function async($method, array $arguments = []): PromiseInterface {
+    protected function async($method, array $arguments = []): PromiseInterface
+    {
         return $this->guzzle->getAsync($method, [
             'headers' => $this->headers(),
-            'query'   => $arguments
+            'query' => $arguments,
         ]);
     }
 
@@ -54,17 +57,18 @@ abstract class ClientBase {
     {
         $response = $this->guzzle->get($method, [
             'headers' => $this->headers(),
-            'query'   => $arguments
+            'query' => $arguments,
         ]);
         $json_response = (string)$response->getBody();
 
         return json_decode($json_response);
     }
 
-    protected function headers(): array {
+    protected function headers(): array
+    {
         return [
-            'Host'          => self::API_HOST,
-            'Accept'        => 'application/json',
+            'Host' => self::API_HOST,
+            'Accept' => 'application/json',
             'Authorization' => "Bearer $this->token",
         ];
     }

@@ -8,9 +8,8 @@ use MarketDataApp\Endpoints\Responses\IndicesQuote;
 
 class Indices
 {
-
     private Client $client;
-    const BASE_URL = "v1/indices/";
+    public const BASE_URL = "v1/indices/";
 
     public function __construct($client)
     {

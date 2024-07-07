@@ -1,4 +1,5 @@
 <?php
+
 namespace MarketDataApp\Enums;
 
 enum Side: string
