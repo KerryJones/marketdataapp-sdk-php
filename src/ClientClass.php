@@ -2,4 +2,6 @@
 
 namespace MarketDataApp\Client;
 
-class ClientClass {}
+class ClientClass
+{
+}
