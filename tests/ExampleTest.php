@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace MarketDataApp\Client\Tests;
 
 use PHPUnit\Framework\TestCase;
 
