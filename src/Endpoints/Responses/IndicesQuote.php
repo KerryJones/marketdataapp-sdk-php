@@ -34,6 +34,7 @@ class IndicesQuote
 
     public function __construct(object $response)
     {
+        // Convert the response to this object.
         $this->status = $response->s;
         $this->symbol = $response->symbol[0];
         $this->last = $response->last[0];
